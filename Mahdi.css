@@ -1,0 +1,359 @@
+/* Global Styles  */
+@font-face {
+    font-family: ubuntu;
+    src: url("src/Ubuntu-Regular.ttf");
+ }
+ 
+ * {
+    margin: 0;
+    padding: 0;
+ }
+ 
+ body {
+    background-color: #fff;
+    font-family: ubuntu;
+    vertical-align: top;
+ }
+ 
+ 
+ 
+ /* نوار همبرگری شروع */
+ #menuToggle{
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+ }
+ #menuToggle a:hover
+ {
+  color: purple;
+ }
+ #menuToggle a
+ {
+  text-decoration: none;
+  color: #eee;
+  
+  transition: color 0.3s ease;
+ }
+ #menuToggle input
+ {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+ }
+ #menuToggle{
+    top: 0;
+    left: 0;
+    margin-bottom: -10px;
+    background-color: rgb(5, 4, 4);
+  
+ }
+ #menuToggle span
+ {
+   
+  top: 10px;
+  left: 6px;
+  display: block;
+  width: 34px;
+  height:5px;
+  margin-bottom: 3px;
+  position: relative;
+  background: rgb(210, 97, 97);
+  border-radius: 3px;
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+ }
+ #menuToggle span:first-child
+ {
+  transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+  transform-origin: 0% 100%;
+ }
+ #menuToggle input:checked ~ span
+ {
+  opacity: 3;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+  
+ }
+ /* باعث میشه خط اخر مهو شه */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ /* باعث میشه خط دوم به سمت بالا بره */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+  transform: rotate(-45deg) translate(0, -1px);
+ }
+ #menu
+ {
+  display: inline;
+  position: absolute;
+  width: 100%;
+  margin: -100px 0 0 -50px;
+  padding: 45px;
+  padding-top: 100px;
+  background: rgb(35, 22, 70);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  /* باعث میشه نوار به داخل بره تا زمانی که روی دکمه نزدیم نیاد بیرون */
+  transform: translate(-100%, 0);
+  /* سرعت حرکت نوار منیو */
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+ 
+  display: inline;
+  padding:  20px ;
+  font-size: 22px;
+ }
+ /*
+ * And let's slide it in from the left
+ */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+ /* نوار همبرگری پایان */
+ 
+ .main-title {
+    font-size: 4em;
+    text-align: center;
+    margin: 60px 0;
+ }
+ 
+ .top-container,
+ .middle-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+ }
+ 
+ .top-left {
+    display: inline-block;
+    width: 40%;
+    margin: 50px;
+    text-align: center;
+    vertical-align: top;
+ }
+ 
+ .top-right {
+    display: inline-block;
+    width: 40%;
+    margin: 50px;
+    text-align: center;
+    vertical-align: top;
+ }
+ 
+ .top-left img,
+ .top-right img {
+    margin-bottom: 50px;
+ }
+ 
+ .top-left .slogan,
+ .top-right .slogan {
+    margin: 20px 0 0;
+    font-size: 40px;
+ }
+ 
+ #comper {
+    background-color: #fafafa;
+    padding: 50px;
+ }
+ 
+ .middle-left,
+ .middle-center,
+ .middle-right {
+    width: 30%;
+    display: inline-block;
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+ }
+ 
+ .middle-left img#mac1 {
+    margin-bottom: 6px;
+ }
+ 
+ .middle-right img#mac3 {
+    margin-bottom: -2.2px;
+ }
+ 
+ .compare-item:first-child {
+    margin-top: 40px;
+ }
+ 
+ .compare-item {
+    margin-bottom: 50px;
+ }
+ 
+ .color-circle {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 25px 1px;
+    display: inline-block;
+ 
+ }
+ 
+ .color-circle-1 {
+    background-color: #abaeb3;
+ }
+ 
+ .color-circle-2 {
+    background-color: #e2e3e4;
+ }
+ 
+ .middle-left #last-item {
+    margin-bottom: 45px !important;
+ }
+ 
+ .bottem-container {
+    width: 97%;
+    margin: 1% auto 0;
+    text-align: center;
+ }
+ 
+ .bottem-right,
+ .bottem-left {
+    width: 47%;
+    margin: 1%;
+    display: inline-block;
+    vertical-align: top;
+ }
+ 
+ .bottem-item-box {
+    background-color: #f2f2f2;
+    height: 610px;
+ }
+ 
+ .bottem-item-box .bottem-item-text {
+    padding: 10%;
+ }
+ 
+ .bottem-item-box .bottem-item-text h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+ }
+ 
+ .bottem-item-box .bottem-item-text h3 {
+    font-size: 36px;
+    margin-bottom: 30px;
+ }
+ .bottem-item-box-image{
+    position: relative;
+    margin-top: -10px;
+ 
+ }
+ .bottem-item-text-absolute{
+    position: absolute;
+    width: 90%;
+    top: 40%;
+    padding: 5%;
+ }
+ .bottem-item-text-absolute h2{
+ color: #fff;
+ font-size: 46px;
+ margin-bottom: 15px;
+ }
+ .bottem-item-text-absolute p{
+ color: #fff; 
+ font-weight: bold;  
+ }
+ footer{
+    background-color: #f5f5f7;
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+ }
+ @media only screen and (max-width:768px) {
+    nav ul li {
+    max-width: 65px;
+    font-size: 14px;
+    }
+ nav ul li:first-child {
+ width: 50px;
+    }
+ nav ul li:nth-child(2)
+ {
+ width: 45px;
+ }
+ .main-title{
+    font-size: 2em;
+ }
+ .top-container, .middle-container
+ {
+    width: 100%;
+ }
+ .top-right, 
+ .top-left{
+ width: 90%;
+ margin: 0 10px 30px;
+ }
+ .top-left .slogan,
+ .top-right .slogan {
+   
+    font-size: 30px;
+ }
+ .middle-container{
+    width: 90%;
+    text-align: center;
+ }
+ .middle-left,
+ .middle-center,
+ .middle-right{
+    width: 92%;
+    display: block;
+ }
+ #comper { 
+    padding: 20px;
+ }
+ .bottem-right,
+ .bottem-left {
+    width: 98%;
+    display: block;
+ }
+ .bottem-item-box {
+    
+    height: 498px;
+    margin :15px 0;
+ }
+ .bottem-item-box-image {
+    margin :15px 0;
+   
+ }
+ .bottem-item-text-absolute{
+    top: 28%;
+ }
+ .bottem-item-text-absolute h2{
+    font-size: 42px;
+ }
+ }
